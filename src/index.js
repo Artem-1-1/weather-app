@@ -41,12 +41,58 @@ const convertToCelsius = function(fahrenheit) {
 
 function processWeatherData(response) {
   
-  let location = response.resolvedAddress;
+  let address = response.address;
   let days = response.days;
-  console.log("Location: "+ location);
-  for (let i=0; i < days.length; i++) {
+
+  const container = document.getElementById('weather-table');
+  container.innerHTML = '';
+
+  const tableTitle = document.createElement('h2');
+  tableTitle.textContent = address;
+  tableTitle.id = 'table-title';
+
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const tbody = document.createElement('tbody');
+
+  const headerRow = document.createElement('tr');
+
+  function createHeaderCell(text) {
+    const cell = document.createElement('th');
+    cell.textContent = text;
+    return cell;
+  }
+
+  headerRow.appendChild(createHeaderCell('Date'));
+  headerRow.appendChild(createHeaderCell('Min Temperature(°C)'));
+  headerRow.appendChild(createHeaderCell('Max Temperature(°C)'));
+
+
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+
+  for (let i = 0; i < days.length; i++) {
     let maxCelsius = convertToCelsius(days[i].tempmax);
     let minCelsius = convertToCelsius(days[i].tempmin);
-    console.log(days[i].datetime+": tempmax = "+maxCelsius+"°C, tempmin = "+minCelsius+"°C");
+
+    const dataRow = document.createElement('tr');
+        
+      
+    function createDataCell(text) {
+        const cell = document.createElement('td');
+        cell.textContent = text;
+        return cell;
+    }
+
+  dataRow.appendChild(createDataCell(days[i].datetime));
+  dataRow.appendChild(createDataCell(minCelsius));
+  dataRow.appendChild(createDataCell(maxCelsius));
+
+  
+  tbody.appendChild(dataRow);
   }
+  table.appendChild(tbody);
+  container.appendChild(tableTitle);
+  container.appendChild(table);
 }

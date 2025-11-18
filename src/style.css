@@ -42,8 +42,6 @@ main {
     text-align: left;
 }
 
-
-
 #submit {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -52,6 +50,36 @@ main {
 h1, h2 {
     color: var(--white-color);
     font-weight: bold;
+}
+
+#weather-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#table-title {
+    color:black
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 0.3rem 0.6rem;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
 }
 
 footer {
