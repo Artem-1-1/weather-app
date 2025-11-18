@@ -17,7 +17,7 @@ function processWeatherData(response) {
   const headerIcon = document.createElement('div');
   headerIcon.id = 'headerIcon';
 
-  let titleIcon = document.createElement('img');
+  const titleIcon = document.createElement('img');
 
   switch (icon) {
   case 'clear-day':
@@ -156,8 +156,6 @@ function processWeatherData(response) {
 
   headerIcon.appendChild(titleIcon);
   headerIcon.appendChild(tableTitle)
-  // container.appendChild(titleIcon);
-  // container.appendChild(tableTitle);
   container.appendChild(headerIcon)
   container.appendChild(table);
 }

@@ -1,7 +1,7 @@
 import "./style.css";
 import { processWeatherData } from "./table-render.js"; 
 
-let key = '7NT5VL6DQ7MGTQWQ9ATHL5PBK';
+const key = '7NT5VL6DQ7MGTQWQ9ATHL5PBK';
 
 const form = document.getElementById('form');
 
