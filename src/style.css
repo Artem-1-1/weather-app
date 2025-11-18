@@ -32,12 +32,14 @@ main {
 
 .form-row {
     display: flex;
-    gap: 30px;
+    gap: 0.6rem;
     padding-top: 1.5rem;
+    align-items: center ;
     justify-content: center;
 }
 
 .form-row > label {
+    width: 5rem;
     font-size: 1.5rem;
     text-align: left;
 }
@@ -56,6 +58,16 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#headerIcon {
+    display: flex;
+    gap: 1rem;
+}
+
+img {
+    height: 4rem;
+    width: 4rem;
 }
 
 #table-title {
